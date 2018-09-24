@@ -18,7 +18,7 @@
                                "James Madison", 
                                "James Monroe");
         
-        $presidents = array("1789 to 1797",
+        $yearsInOffics = array("1789 to 1797",
                             "1797 to 1801",
                             "1801 to 1809",
                             "1809 to 1817",
@@ -26,8 +26,10 @@
         
         $outputTemplate = "<p>President [NAME] served from [TERM] </p>\n";
         
-        foreach () {
-            
+        foreach ($presidents as $sequence => $value) {
+            $tempString = str_replace("[NAME]", $value, $outputTemplate);
+            $outputString = str_replace("[TERM]",$yearsInOffics[$sequence],$tempString);
+            echo $outputString;
         }
                             
         
