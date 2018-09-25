@@ -11,5 +11,23 @@
 
 	<body>
         <h2>Validate Credit Card</h2>
+        
+        <?php
+            $creditCard = array("",
+                               "8910-1234-5678-6543",
+                               "OOOO-9123-4567-0123");
+        
+            foreach ($creditCard as $indexNumber => $cardNumber) {
+                if (empty($cardNumber)) {
+                    echo "<p>Credit Card Number $indexNumber is invalid because it contains an empty string. </p>";
+                } else {
+                $creditCardNumber = $cardNumber;
+                $creditCardNumber = str_replace("-", "", $creditCardNumber);
+                $creditCardNumber = str_replace(" ", "", $creditCardNumber);
+                echo "<p> Credit Card Number $indexNumber $creditCardNumber removed dashes and spaces.</p>";
+                }
+            } 
+            
+        ?>
 	</body>
 </html>
